@@ -30,11 +30,10 @@ except ImportError:
 import nacl.pwhash
 import nacl.exceptions
 import nacl.bindings
-import nacl.signing
-from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
-from cryptography.hazmat.primitives import padding, serialization
-from cryptography.hazmat.primitives.asymmetric import ed25519, x25519
-from cryptography.hazmat.backends import default_backend
+from Crypto.Util.Padding import pad, unpad
+from Crypto.PublicKey import ECC
+from Crypto.Cipher import AES
+from Crypto.Random import get_random_bytes
 
 # =========================
 # HKDF FUNCTIONS (RFC 5869)
